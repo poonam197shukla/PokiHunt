@@ -1,0 +1,94 @@
+<form class="mt-3" action="" *ngFor="let x of datas" #form="ngForm" (ngSubmit)="add(form)">
+    <div class="form">
+        <div>
+            <h2>{{x.pokiDetails}} </h2>
+            <hr>
+        </div>
+        <div class="form-group">
+            <label class="label" for="name">{{x.pokiName}}</label>
+            <input type="text" ngModel required name="name" id="name" #name="ngModel" class="form-control"  >
+            <div class="alert alert2 alert-danger" *ngIf="name.touched && name.invalid">
+            <div class="alert1" *ngIf="name.errors?.required">
+                <span class="material-icons ">error</span>Name is Mandatory</div>           
+            </div>
+        </div>
+       
+        <div class="form-group mt-1">
+            <label class="label" for="name">{{x.pokiType}}</label><br>
+            <!-- <div  *ngFor="let type of types">
+                <input type="radio" name="type" ngModel><label for="">&nbsp;{{type}}</label>&nbsp;&nbsp;
+            </div> -->
+            <input type="radio" name="type" ><label for="">&nbsp;{{x.typePoki.bug}}</label>&nbsp;&nbsp;
+            <input type="radio" name="type"><label for="">&nbsp;{{x.typePoki.grass}}</label>&nbsp;&nbsp;
+            <input type="radio" name="type"><label for="">&nbsp;{{x.typePoki.fire}}</label>&nbsp;&nbsp;
+            <input type="radio" name="type"><label for="">&nbsp;{{x.typePoki.water}}</label>&nbsp;&nbsp;
+            <input type="radio" name="type"><label for="">&nbsp;{{x.typePoki.others}}</label> 
+        </div>
+        <div class="form-group mt-2">
+            <label class="label" for="name">{{x.image.imageHeading}}</label><br>
+            <input type="radio" name="image" (click)="imageUrl()" checked><label for="">&nbsp;{{x.image.imageUrl}}</label>&nbsp;&nbsp;
+            <input type="radio" name="image" (click)="imageUpload()"><label for="">&nbsp;{{x.image.imageUpload}}</label>&nbsp;&nbsp;
+            
+                    <div *ngIf="imageurl" class="form-group">
+                        <input type="email" class="form-control" ngModel required email name="url" id="url" #url="ngModel" placeholder="Image Url">
+                        <div class="alert alert2 alert-danger" *ngIf="url.touched && url.invalid">
+                            <div class="alert1" *ngIf="url.errors?.required">
+                                <span class="material-icons ">error</span>Image url is mandatory</div>
+                                <div class="alert1" *ngIf="url.errors?.email">
+                                    <span class="material-icons ">error</span>Please Enter valid Url</div>
+                        </div>
+                    </div>
+                   
+                    <div *ngIf="uploadimage" class="form-group">
+                        <input type="file" class="form-control"  name="upload" id="upload" ngModel #upload="ngModel" required>
+                        <div class="alert alert2 alert-danger" *ngIf="upload.touched && upload.invalid">
+                            <div class="alert1" *ngIf="upload.errors?.required">
+                                <span class="material-icons ">error</span>Please Upload Image of Pokemon</div>
+                        </div>
+                    </div>
+
+        </div>
+        <div class="form-group mt-2">
+            <label class="label" for="name">{{x.category.categoryHeading}}</label><br>
+              <mat-form-field appearance="fill">
+                <mat-label>Powers of Pokemon</mat-label>
+                <mat-select ngModel name="category" #category="ngModel" required>
+                  <mat-option *ngFor="let category of categories" [value]="category">
+                    {{category}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="alert alert2 alert-danger" *ngIf="category.touched && category.invalid">
+                <div class="alert1" *ngIf="category.errors?.required">
+                    <span class="material-icons ">error</span>Category is Mandatory</div>           
+                </div>
+        </div>
+
+        <div class="form-group mt-0">
+            <mat-slide-toggle color="primary" ngModel required name="toggle" #toggle="ngModel">{{x.iAmPoki}}</mat-slide-toggle>
+            <div class="alert alert2 alert-danger" *ngIf="toggle.touched && toggle.invalid">
+                <div class="alert1" *ngIf="toggle.errors?.required">
+                    <span class="material-icons ">error</span>Agreen terms and conditions</div>           
+                </div>
+           
+        </div>
+
+        <div class="mt-3 addButton">
+            <button type="submit" id="success" [disabled]="form.invalid" class="btn btn-lg btn-success1" data-toggle="modal"
+            data-target="success">{{x.buttons.add}}</button>       
+         </div>   
+    </div>
+</form>
+
+<!-- Pokemon added Successful Modal-->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button> -->
+
+<div class="modal fade success" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+       <div class="alert alert-success mt-2">
+            <strong>Success!</strong> Pokemon Added Successfully!!         
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+form{
+    border: 3px green solid;
+    border-radius: 2%;
+    box-shadow: 1px 2px 7px rgba(7, 150, 26, 1.5);
+    height: 55%;
+    width: 40%;
+    margin: 30%;
+}
+
+.form{
+    margin: 7%;
+    margin-top: 4%;
+}
+
+.label{
+    font-weight: bolder;
+}
+
+h2{
+   text-shadow: 1px 2px 2px rgba(7, 150, 26, 2);
+}
+
+.addButton{
+    margin-left: 150px;
+}
+
+.btn-success1{
+    width: 150px;
+    background-color: #177a03;
+    color: white;
+    font-weight: bolder;
+}
+
+.alert1{
+    margin-top: -14px;  
+    margin-left: -16px;
+    background-color: white;
+    color: red;
+}
+
+.alert2{
+    background-color: white;
+    border-color: white;
+    height: 5px;
+    /* width: 200px; */
+}
+
+mat-label{
+    color:green
+}

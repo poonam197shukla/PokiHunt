@@ -1,0 +1,36 @@
+[{
+  "pokemonBody1":"Japanese game designer Satoshi Tajiri created the first Pokémon game in 1996 for the recently introduced Nintendo Game Boy portable console. The concept arose from his childhood hobby of collecting insects, as well as his love of anime, or Japanese animation.",
+  "pokemonBody2":"It may be entry #112 in the Pokédex, but according to Ken Sugimori – the primary designer for the Pokémon games – Rhydon was the first Pokémon ever created. Afterward,  thus completing the Pokédex. Short for “pocket monsters,” Pokémon exists as a TV show, a trading card game, video games and toys.",
+  "pokemonBody3":"The Pokémon themselves are creatures that live in the wild or with their owner (as in your kid), referred to as their trainer. The trainer's goal is to “catch them all” and, by all, we mean all 800+ of them.",
+  "pokemonBody4":"",
+  "aboutUs":"About PokeHunt",
+  "addNewPoki":"Add New Pokemon",
+  "home":"HOME",
+  "pokiDetails":"Pokemon Details",
+  "pokiName":"Name of the Pokemon",
+  "pokiType":"Type of Pokemon",
+  "typePoki":{
+    "grass":"Grass",
+    "bug":"Bug",
+    "fire":"Fire",
+    "water":"Water",
+    "others":"Others"
+  },
+  "image":{
+    "imageHeading":"Image",
+    "imageUrl":"Enter Url",
+    "imageUpload":"Upload Image"
+  },
+  "category":{
+    "categoryHeading":"Category",
+    "categoryDefault":"Pokemon category",
+    "categoryHero":"Hero",
+    "categoryVillain":"Villain"
+  },
+  "iAmPoki":"I am a Pokemon",
+  "buttons":{
+    "add":"ADD",
+    "close":"CLOSE"
+  }
+  
+}]

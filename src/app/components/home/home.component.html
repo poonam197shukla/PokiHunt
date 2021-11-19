@@ -1,0 +1,40 @@
+<div class="mt-4">
+  <div class="searchbar">
+    <form class="form-inline waves-light" mdbWavesEffect>
+      <div class="md-form mt-0">
+        <input class="form-control mr-sm-2 search" type="text" [(ngModel)]="data" name="search"
+          placeholder="Search your favourie pokemon here...........">
+      </div>
+    </form>
+  </div><br><br>
+
+  <mat-card>
+    <div class="pokemon-grid">
+      <div class="box" *ngFor="let pokemon of pokemons | filter:data | slice: lowValue : highValue" >
+        <img [src]="pokemon.sprites.front_default" alt="pokes">
+        <h2>{{pokemon.name | uppercase}}</h2>
+        <p>Type: {{pokemon.types[0].type.name}}</p>
+        <p>Height: {{pokemon.height}}<span>(cm)</span></p>
+        <p>Health: {{pokemon.stats[0].base_stat}}</p>
+      </div>
+  </div></mat-card>
+  
+  <!-- <div class="pokemon-grid">
+    <div class="box" *ngFor="let pokemon of pokemons | filter:data">
+      <img [src]="pokemon.sprites.front_default" alt="pokes">
+      <h2>{{pokemon.name | uppercase}}</h2>
+      <p>Type: {{pokemon.types[0].type.name}}</p>
+      <p>Height: {{pokemon.height}}<span>(cm)</span></p>
+      <p>Health: {{pokemon.stats[0].base_stat}}</p>
+    </div>
+  </div><br><br> -->
+  <div class="paginator  ">
+    <mat-paginator 
+    [length]="pokemons.length"
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="[10,20]" 
+    aria-label="Select page"
+    (page)="pageEvent = getPaginatorData($event)">
+    </mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<nav class="navbar navbar1 navbar-expand-lg"  *ngFor="let x of datas">
+    <div class="homediv">
+        <a class="navbar-brand home" href="/">{{x.home}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+   
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+             <!-- <button  class="btn btnAbtUs" type="submit" > About Us</button>  -->
+             <!-- Button trigger modal -->
+            <button type="button" class="btn btnAbtUs" data-toggle="modal" data-target="#exampleModal">
+              About Us
+            </button>
+            </a>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success btn-outline-success1" type="submit" (click)="addPokemon()" >{{x.addNewPoki}}</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Modal About Us-->
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-border" role="document">
+    <div class="modal-content"  *ngFor="let x of datas">
+      <div class="modal-header">
+        <h2 class="modal-title heading" id="exampleModalLabel">{{x.aboutUs}}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modBod" >
+       <p>{{x.pokemonBody1}}</p>
+       <p>{{x.pokemonBody2}}</p>
+       <p>{{x.pokemonBody3}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-success1" data-dismiss="modal">{{x.buttons.close}}</button>
+      </div>
+    </div>
+  </div>
+</div>
